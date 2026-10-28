@@ -1,10 +1,10 @@
-# WEB ENGINEERING / FRONTEND DEVELOPMENT
+# Web Engineering & AI
 
 ## Assignment 2: Advanced React Component Architecture & State Management
 
 **Submitted By:** Abdul Basit  
 **Registration ID:** 249611  
-**Course:** Web Engineering / Frontend Development  
+**Course:** Web Engineering & AI  
 **Assignment:** 2  
 **Due Date:** 28 October 2026  
 **Submitted To:** Mr. Ammar
