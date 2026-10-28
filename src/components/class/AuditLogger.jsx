@@ -25,7 +25,7 @@ class AuditLogger extends Component {
 
   toggleExpanded = () => {
     this.setState((currentState) => ({ isExpanded: !currentState.isExpanded }));
-  }
+  };
 
   render() {
     const { logs } = this.props;
@@ -47,18 +47,25 @@ class AuditLogger extends Component {
             {isExpanded ? "Hide activity" : "Show activity"}
           </button>
         </div>
-        {isExpanded && (logs.length > 0 ? (
-          <ul className="audit-list">
-            {logs.map((log) => (
-              <li key={log.id}>
-                <span><strong>{log.type}</strong> {log.productName}</span>
-                <time dateTime={log.timestamp}>{new Date(log.timestamp).toLocaleString()}</time>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="audit-empty">No product changes have been recorded yet.</p>
-        ))}
+        {isExpanded &&
+          (logs.length > 0 ? (
+            <ul className="audit-list">
+              {logs.map((log) => (
+                <li key={log.id}>
+                  <span>
+                    <strong>{log.type}</strong> {log.productName}
+                  </span>
+                  <time dateTime={log.timestamp}>
+                    {new Date(log.timestamp).toLocaleString()}
+                  </time>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="audit-empty">
+              No product changes have been recorded yet.
+            </p>
+          ))}
       </section>
     );
   }

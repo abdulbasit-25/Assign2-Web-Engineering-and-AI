@@ -27,21 +27,35 @@ function ProductList({
         </label>
         <label>
           Category
-          <select value={categoryFilter} onChange={(event) => onCategoryChange(event.target.value)}>
+          <select
+            value={categoryFilter}
+            onChange={(event) => onCategoryChange(event.target.value)}
+          >
             <option value="all">All categories</option>
-            {categories.map((category) => <option key={category} value={category}>{category}</option>)}
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
           </select>
         </label>
         <label>
           Stock status
-          <select value={statusFilter} onChange={(event) => onStatusChange(event.target.value)}>
+          <select
+            value={statusFilter}
+            onChange={(event) => onStatusChange(event.target.value)}
+          >
             <option value="all">All statuses</option>
             <option value="In stock">In stock</option>
             <option value="Low stock">Low stock</option>
             <option value="Out of stock">Out of stock</option>
           </select>
         </label>
-        <button className="button button-secondary clear-button" type="button" onClick={onClearFilters}>
+        <button
+          className="button button-secondary clear-button"
+          type="button"
+          onClick={onClearFilters}
+        >
           Clear filters
         </button>
       </div>
@@ -59,7 +73,12 @@ function ProductList({
           </thead>
           <tbody>
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} onEdit={onEdit} onDelete={onDelete} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                onEdit={onEdit}
+                onDelete={onDelete}
+              />
             ))}
           </tbody>
         </table>

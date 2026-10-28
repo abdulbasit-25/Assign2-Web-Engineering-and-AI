@@ -15,8 +15,13 @@ export function ThemeProvider({ children }) {
     writeStorage(THEME_KEY, theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme((currentTheme) => currentTheme === "light" ? "dark" : "light");
+  const toggleTheme = () =>
+    setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
   const contextValue = useMemo(() => ({ theme, toggleTheme }), [theme]);
 
-  return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={contextValue}>
+      {children}
+    </ThemeContext.Provider>
+  );
 }
